@@ -3,6 +3,11 @@
   background: #2670a1;
 }
 
+a { 
+  text-decoration: none; 
+  color: inherit;
+}
+
 .purple {
   background: #6b3f7c;
 }
