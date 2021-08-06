@@ -16,7 +16,7 @@ var schedule = {
 var string = `
 <table border='0' cellspacing='0' cellpadding='0'>
 \t<tr class = 'days'>
-\t\t<th></th>`
+\t\t<th></th>`;
 for(var key in schedule){
     string += "\n\t\t<th>"+key+"</th>";
 }
@@ -60,32 +60,37 @@ if(day!=0 && day!=7){
         }
     }
 
-    if(time == -1) break;
-
     console.log(time);
     console.log(key);
 
-    string+= `
-    <br>
-    <h1> Quick Access </h1>
-    <br>
-    <table border='0' cellspacing='0' cellpadding='0'>
-    \t<tr class = 'days'>
-    \t\t<th> Ongoing </th>
-    \t</tr>
-    \t<tr>
-    `
-    string += "\n\t\t<td class = 'time_slot "+colors[schedule[key][time]];
-    string +="' data-tooltip ='"+tooltip[schedule[key][time]]+"'>";
-    if(idcode[schedule[key][time]]!="0"){
-        string+="<a href='https://lmsone.iiitkottayam.ac.in/course/view.php?id="+idcode[schedule[key][time]]+"' target='_blank'>";
+    if(time == -1){
+        string += `
+        <br>
+        <h1> No classes ongoing </h1>
+        `;
     }
-    string+=names[schedule[key][time]];
-    if(idcode[schedule[key][time]]!="0"){
-        string+="</a>";
+    else{
+        string+= `
+        <br>
+        <h1> Quick Access </h1>
+        <br>
+        <table border='0' cellspacing='0' cellpadding='0'>
+        \t<tr class = 'days'>
+        \t\t<th> Ongoing </th>
+        \t</tr>
+        \t<tr>
+        `;
+        string += "\n\t\t<td class = 'time_slot "+colors[schedule[key][time]];
+        string +="' data-tooltip ='"+tooltip[schedule[key][time]]+"'>";
+        if(idcode[schedule[key][time]]!="0"){
+            string+="<a href='https://lmsone.iiitkottayam.ac.in/course/view.php?id="+idcode[schedule[key][time]]+"' target='_blank'>";
+        }
+        string+=names[schedule[key][time]];
+        if(idcode[schedule[key][time]]!="0"){
+            string+="</a>";
+        }
+        string+="</td>\n\t</tr>\n</table>";
     }
-    string+="</td>\n\t</tr>\n</table>";
-
 }
 
 
