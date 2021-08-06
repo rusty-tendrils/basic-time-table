@@ -1,6 +1,6 @@
 var names = ["Crypto [ICS412]", "Blockchain [IOE411]", "Big Anal. [CSE412]", "CG [CSE411]", "BTP-1", "Code", "Placement", "Seminar"];
 var colors  = ["purple", "orange", "blue", "green", "black", "black", "red", "black"];
-var tooltip = ["Cryptography & Network Security", "Blockchain Technology", "Huge info sodomy --tan(door)/cos(door)", "Computer Graphics", "Btech Project I", "Coding Club activities" , "Placement activities", "College seminar"];
+var tooltip = ["Cryptography & Network Security", "Blockchain Technology", "Huge info sodomy --tan(door)*cos(door)", "Computer Graphics", "Btech Project I", "Coding Club activities" , "Placement activities", "College seminar"];
 var idcode = ["80","79","82","81","0","0","0","0"];
 var times = ["9:40 - 10:35", "10:50 - 11:45", "12:00 - 12:55", "14:00 - 16:00", "16:15 - 18:15"];
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
