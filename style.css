@@ -48,7 +48,7 @@ body {
   box-sizing: border-box;
 }
 
-table {
+*,table {
   font-family: 'Open Sans', Helvetica;
   color: white;
 }
