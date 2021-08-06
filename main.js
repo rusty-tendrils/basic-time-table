@@ -22,6 +22,7 @@ for(var key in schedule){
 }
 string+="\n\t</tr>";
 for(var time in times){
+    time = parseInt(time);
     string += "\n\t<tr>";
     string += "\n\t\t<td class = 'time'>"+times[time]+"</td>";
     for(var key in schedule){
@@ -49,24 +50,30 @@ if(day!=0 && day!=7){
 
     var key = days[day];
     var time =-1;
+    var lastclass = -1;
     for(var i in times){
         var arr = times[i].split(/[:-]+/);
         var leftbound = parseInt(arr[0])*60 + parseInt(arr[1]);
         var rightbound = parseInt(arr[2])*60 + parseInt(arr[3]);
         var current = hour*60 + minute;
+        if(current >= leftbound){
+            lastclass = parseInt(i);
+        }
         if(current >= leftbound && current <= rightbound){
-            time = i;
+            time = parseInt(i);
             break;
         }
     }
-
+    
+    console.log(currentdate);
     console.log(time);
+    console.log(lastclass);
     console.log(key);
 
-    if(time == -1){
+    if(time == -1 && lastclass == 4){
         string += `
         <br>
-        <h1> No classes ongoing </h1>
+        <h1> No classes more today </h1>
         `;
     }
     else{
@@ -75,21 +82,46 @@ if(day!=0 && day!=7){
         <h1> Quick Access </h1>
         <br>
         <table border='0' cellspacing='0' cellpadding='0'>
-        \t<tr class = 'days'>
-        \t\t<th> Ongoing </th>
+        \t<tr class = 'days'>`;
+        if(time!=-1){
+            string+="\n\t\t<th> Ongoing </th>";
+        }
+        if(lastclass<4){
+            string+="\n\t\t<th> Next Class </th>";
+        }
+        string+=`
+
         \t</tr>
         \t<tr>
         `;
-        string += "\n\t\t<td class = 'time_slot "+colors[schedule[key][time]];
-        string +="' data-tooltip ='"+tooltip[schedule[key][time]]+"'>";
-        if(idcode[schedule[key][time]]!="0"){
-            string+="<a href='https://lmsone.iiitkottayam.ac.in/course/view.php?id="+idcode[schedule[key][time]]+"' target='_blank'>";
+        if(time!=-1){
+            string += "\n\t\t<td class = 'time_slot "+colors[schedule[key][time]];
+            string +="' data-tooltip ='"+tooltip[schedule[key][time]]+"'>";
+            if(idcode[schedule[key][time]]!="0"){
+                string+="<a href='https://lmsone.iiitkottayam.ac.in/course/view.php?id="+idcode[schedule[key][time]]+"' target='_blank'>";
+            }
+            string+=names[schedule[key][time]];
+            if(idcode[schedule[key][time]]!="0"){
+                string+="</a>";
+            }
+            string+="</td>"
         }
-        string+=names[schedule[key][time]];
-        if(idcode[schedule[key][time]]!="0"){
-            string+="</a>";
+        if(lastclass<4){
+            time  = lastclass + 1;
+            string += "\n\t\t<td class = 'time_slot "+colors[schedule[key][time]];
+            string +="' data-tooltip ='"+tooltip[schedule[key][time]]+"'>";
+            if(idcode[schedule[key][time]]!="0"){
+                string+="<a href='https://lmsone.iiitkottayam.ac.in/course/view.php?id="+idcode[schedule[key][time]]+"' target='_blank'>";
+            }
+            string+=names[schedule[key][time]];
+            if(idcode[schedule[key][time]]!="0"){
+                string+="</a>";
+            }
+            string+="</td>"
         }
-        string+="</td>\n\t</tr>\n</table>";
+
+        string+="\n\t</tr>\n</table>";
+
     }
 }
 
