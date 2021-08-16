@@ -5,7 +5,7 @@ var tooltip = ["Cryptography & Network Security", "Blockchain Technology", "Huge
 var idcode = ["80","79","82","81","0","0","-1","0"];
 var times = ["9:40 - 10:35", "10:50 - 11:45", "12:00 - 12:55", "14:00 - 16:00", "16:15 - 18:15"];
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var schedule = { "Monday" : [0,2,3,2,5], "Tuesday" : [1,3,2,3,4], "Wednesday" : [2,4,0,7,4], "Thursday" : [0,4,1,0,4], "Friday" : [3,4,1,6,5]};
+var schedule = { "Monday" : [0,2,3,2,5], "Tuesday" : [2,3,4,3,4], "Wednesday" : [1,2,0,7,4], "Thursday" : [0,4,1,0,4], "Friday" : [3,4,1,6,5]};
 
 // function to add table data
 function addTD(time,key){
