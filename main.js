@@ -40,7 +40,7 @@ string+="\n</table>"
 var currentdate = new Date();
 var hour = currentdate.getHours(), minute = currentdate.getMinutes(), day = currentdate.getDay();
 
-if(day!=0 && day!=7){
+if(day!=0 && day!=6){
     var key = days[day], time =-1, lastclass = -1;
     for(var i in times){
         var arr = times[i].split(/[:-]+/);
@@ -79,5 +79,11 @@ if(day!=0 && day!=7){
         if(lastclass<4) string += addTD(lastclass+1,key);
         string+="\n\t</tr>\n</table>";
     }
+}
+else{
+    string += `
+        <br>
+        <h1> No more classes today </h1>
+        `;
 }
 document.querySelector(".tab").innerHTML = string;
