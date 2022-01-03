@@ -1,11 +1,12 @@
 // Table data
-var names = ["Crypto [ICS412]", "Blockchain [IOE411]", "Big Anal. [CSE412]", "CG [CSE411]", "BTP-1", "Code", "Placement", "Seminar"];
-var colors  = ["purple", "orange", "blue", "green", "black", "black", "red", "black"];
-var tooltip = ["Cryptography & Network Security", "Blockchain Technology", "Huge info sodomy --tan(door)*cos(door)", "Computer Graphics", "Btech Project Phase I", "Coding Club activities" , "Placement activities", "College seminar"];
-var idcode = ["80","79","82","81","0","0","-1","0"];
-var times = ["9:40 - 10:35", "10:50 - 11:45", "12:00 - 12:55", "14:00 - 16:00", "16:15 - 18:15"];
+var names = ["IoT [ICS423]", "Appl.Pred.Anal. [ICS422]", "Deep Lrng. [IOE421]","BTP-2","Honors-2","Code", "Placement", "Seminar"];
+var colors  = ["purple", "orange", "blue", "black", "black","black", "red", "black"];
+var tooltip = ["Internet of Things", "Applied Predictive Analytics", "Deep Learning", "Btech Project Phase II","Honors Project Phase II", "Coding Club activities" , "Placement activities", "College seminar"];
+var idcode = ["95","97","96","0","0","0","-1","0"];
+var times = ["9:40 - 10:35", "10:50 - 11:45", "12:00 - 12:55", "14:00 - 16:00", "16:15 - 17:15"];
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var schedule = { "Monday" : [0,2,3,2,5], "Tuesday" : [2,3,4,3,4], "Wednesday" : [1,2,0,7,4], "Thursday" : [0,4,1,0,4], "Friday" : [3,4,1,6,5]};
+var schedule = { "Monday" : [1,3,2,4,4], "Tuesday" : [2,3,0,4,4], "Wednesday" : [0,3,2,4,7], "Thursday" : [3,3,1,0,6], "Friday" : [0,3,1,5,6]};
+
 
 
 function sleep(ms) {
